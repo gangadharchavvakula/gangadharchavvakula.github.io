@@ -7,15 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   
-  <!-- Fixed Content Security Policy (CSP) to allow fonts & styles -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+  <!-- Updated CSP to allow fonts and styles explicitly -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self'; 
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-    font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com; 
-    connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
+    font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com; 
+    img-src 'self' data:;
+    script-src 'self' 'unsafe-inline';
+    connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
+  ">
   
-  <!-- Removed outdated interest-cohort policy -->
-  <meta http-equiv="Permissions-Policy" content="">
-
+  <!-- Removed Permissions-Policy entirely as it's optional and causing warnings -->
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
