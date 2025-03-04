@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{P as n,ra as o,sa as i,ua as s,va as l}from"./chunk-E5KOL7MD.mjs";import"./chunk-VVCT4QZE.mjs";var m=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=n({type:e,selectors:[["app-skills"]],standalone:!0,features:[l],decls:2,vars:0,template:function(t,r){t&1&&(o(0,"p"),s(1,"skills works!"),i())}})}}return e})();export{m as SkillsComponent};

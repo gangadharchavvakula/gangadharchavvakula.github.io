@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{P as o,ra as n,sa as a,ua as i,va as r}from"./chunk-E5KOL7MD.mjs";import"./chunk-VVCT4QZE.mjs";var u=(()=>{class t{static{this.\u0275fac=function(e){return new(e||t)}}static{this.\u0275cmp=o({type:t,selectors:[["app-about"]],standalone:!0,features:[r],decls:2,vars:0,template:function(e,s){e&1&&(n(0,"p"),i(1,"about works!"),a())}})}}return t})();export{u as AboutComponent};
