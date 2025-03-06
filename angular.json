@@ -28,7 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "baseHref": "/gangadharchavvakula/"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
