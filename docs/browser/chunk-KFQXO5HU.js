@@ -1,1 +1,0 @@
-import{Q as o,la as n,ma as a,oa as i,pa as r}from"./chunk-DBCVIB2O.js";var u=(()=>{class t{static{this.\u0275fac=function(e){return new(e||t)}}static{this.\u0275cmp=o({type:t,selectors:[["app-about"]],standalone:!0,features:[r],decls:2,vars:0,template:function(e,s){e&1&&(n(0,"p"),i(1,"about works!"),a())}})}}return t})();export{u as AboutComponent};

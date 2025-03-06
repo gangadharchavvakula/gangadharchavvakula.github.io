@@ -1,1 +1,0 @@
-import{Q as o,la as n,ma as r,oa as i,pa as s}from"./chunk-DBCVIB2O.js";var m=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=o({type:e,selectors:[["app-projects"]],standalone:!0,features:[s],decls:2,vars:0,template:function(t,p){t&1&&(n(0,"p"),i(1,"projects works!"),r())}})}}return e})();export{m as ProjectsComponent};
