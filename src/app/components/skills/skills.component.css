@@ -1,10 +1,63 @@
+/* Section Styling */
 .skills-section {
-    padding: 50px;
-    background: #333;
+    text-align: center;
+    padding: 60px 10%;
+    background: #222;
     color: white;
+    border-radius: 8px;
   }
   
-  ul {
-    list-style: none;
+  /* Title Styling */
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+  }
+  
+  /* Tab Buttons */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tabs button {
+    background: transparent;
+    border: 2px solid #ffcc00;
+    color: #ffcc00;
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .tabs button:hover, 
+  .tabs button.active {
+    background: #ffcc00;
+    color: black;
+    transform: scale(1.1);
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   

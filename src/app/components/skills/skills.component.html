@@ -1,11 +1,21 @@
-<section class="skills-section">
-    <h2>My Skills</h2>
-    <ul>
-      <li>Angular</li>
-      <li>React.js</li>
-      <li>TypeScript</li>
-      <li>CSS3 & SCSS</li>
-      <li>Bootstrap</li>
-    </ul>
+<section id="skills" class="skills-section">
+    <h2 class="section-title">My Skills</h2>
+    
+    <!-- Tab Navigation -->
+    <div class="tabs">
+      <button *ngFor="let skill of skills; let i = index" 
+              (click)="selectTab(i)" 
+              [class.active]="selectedTab === i">
+        {{ skill.name }}
+      </button>
+    </div>
+  
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <div class="tab-pane" *ngFor="let skill of skills; let i = index" [class.active]="selectedTab === i">
+        <h3>{{ skill.name }}</h3>
+        <p>{{ skill.description }}</p>
+      </div>
+    </div>
   </section>
   
