@@ -1,5 +1,14 @@
-<section class="experience-section">
-    <h2>Work Experience</h2>
-    <p>Worked at Vee Technologies as a Software Engineer.</p>
+<section id="experience" class="experience-section">
+    <h2 class="section-title">Work Experience</h2>
+  
+    <div class="timeline">
+      <div *ngFor="let exp of experiences; let i = index" class="timeline-item" [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0">
+        <div class="content">
+          <h3>{{ exp.company }}</h3>
+          <p class="role">{{ exp.role }} ({{ exp.duration }})</p>
+          <p class="description">{{ exp.description }}</p>
+        </div>
+      </div>
+    </div>
   </section>
   

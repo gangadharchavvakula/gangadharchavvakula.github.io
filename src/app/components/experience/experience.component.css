@@ -1,6 +1,61 @@
 .experience-section {
-    padding: 50px;
-    background: #555;
+    text-align: center;
+    padding: 60px 10%;
+    background: #222;
     color: white;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+  }
+  
+  /* Timeline Layout */
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 0.5s forwards;
+  }
+  
+  .timeline-item.left {
+    text-align: right;
+  }
+  
+  .timeline-item.right {
+    text-align: left;
+    margin-left: 50%;
+  }
+  
+  /* Animation */
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .content {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.2);
+  }
+  
+  .role {
+    color: #ffcc00;
+    font-weight: bold;
+  }
+  
+  .description {
+    color: #ddd;
   }
   

@@ -1,21 +1,73 @@
+/* Contact Section */
 .contact-section {
-    padding: 50px;
-    background: #666;
+    text-align: center;
+    padding: 60px 10%;
+    background: #222;
     color: white;
   }
   
-  input, textarea {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
   }
   
-  button {
-    margin-top: 10px;
-    padding: 10px;
-    background: #ffcc00;
-    border: none;
-    cursor: pointer;
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ddd;
+  }
+  
+  /* Contact Cards */
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .contact-card {
+    background: #333;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInUp 0.5s forwards;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .contact-card img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-card h3 {
+    color: #ffcc00;
+    font-size: 1.5rem;
+  }
+  
+  .contact-card p {
+    font-size: 1rem;
+    color: #ddd;
+  }
+  
+  .contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.3);
+  }
+  
+  /* Unique Colors */
+  .whatsapp { border-top: 5px solid #25D366; }
+  .linkedin { border-top: 5px solid #0077B5; }
+  .email { border-top: 5px solid #FF4500; }
+  
+  /* Fade-in Animation */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
   }
   
