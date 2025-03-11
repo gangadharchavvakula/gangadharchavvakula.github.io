@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+.content-section {
+    height: 100vh;
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  
+  #home { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+  #about { background: #222; }
+  #skills { background: #333; }
+  #projects { background: #444; }
+  #experience { background: #555; }
+  #contact { background: #666; }
+  
+  button {
+    background: #ffcc00;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: white;
+    color: black;
+  }
+  

@@ -1,1 +1,0 @@
-import{Q as o,ma as n,na as r,pa as i,qa as s}from"./chunk-L2BFYMR6.js";var m=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=o({type:e,selectors:[["app-projects"]],standalone:!0,features:[s],decls:2,vars:0,template:function(t,p){t&1&&(n(0,"p"),i(1,"projects works!"),r())}})}}return e})();export{m as ProjectsComponent};

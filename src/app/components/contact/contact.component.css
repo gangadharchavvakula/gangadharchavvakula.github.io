@@ -1,0 +1,21 @@
+.contact-section {
+    padding: 50px;
+    background: #666;
+    color: white;
+  }
+  
+  input, textarea {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #ffcc00;
+    border: none;
+    cursor: pointer;
+  }
+  

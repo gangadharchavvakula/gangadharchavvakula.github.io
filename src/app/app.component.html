@@ -1,7 +1,46 @@
 <app-header></app-header>
-<div class="container mt-5 pt-5">
-  <router-outlet></router-outlet>
-  <img src="assets/test.txt" style="display:none;">
-  <link rel="icon" href="favicon.ico">
-</div>
+
+<!-- Home Section -->
+<section id="home" class="content-section">
+  <h1>Welcome to My Portfolio</h1>
+  <p>Frontend Developer | Angular & React</p>
+</section>
+
+<!-- About Section -->
+<app-about></app-about>
+
+<!-- Skills Section -->
+<section id="skills" class="content-section">
+  <h2>My Skills</h2>
+  <ul>
+    <li>Angular</li>
+    <li>React</li>
+    <li>TypeScript</li>
+    <li>Bootstrap</li>
+  </ul>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="content-section">
+  <h2>My Projects</h2>
+  <p>View my work in web development.</p>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="content-section">
+  <h2>Experience</h2>
+  <p>Worked at Vee Technologies as a Software Engineer.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="content-section">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
 <app-footer></app-footer>
