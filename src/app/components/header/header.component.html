@@ -1,12 +1,18 @@
 <nav class="custom-navbar">
   <a class="logo" routerLink="/">Gangadhar</a>
 
-  <ul class="nav-links">
-    <li><a class="nav-item" href="#home">Home</a></li>
-    <li><a class="nav-item" href="#about">About</a></li>
-    <li><a class="nav-item" href="#skills">Skills</a></li>
-    <li><a class="nav-item" href="#projects">Projects</a></li>
-    <li><a class="nav-item" href="#experience">Experience</a></li>
-    <li><a class="nav-item" href="#contact">Contact</a></li>
+  <!-- Toggle Button for Mobile -->
+  <button class="toggle-btn" (click)="toggleMenu()">
+    ☰
+  </button>
+
+  <!-- Navigation Links -->
+  <ul class="nav-links" [class.active]="menuOpen">
+    <li><a class="nav-item" href="#home" (click)="closeMenu()">Home</a></li>
+    <li><a class="nav-item" href="#about" (click)="closeMenu()">About</a></li>
+    <li><a class="nav-item" href="#skills" (click)="closeMenu()">Skills</a></li>
+    <li><a class="nav-item" href="#projects" (click)="closeMenu()">Projects</a></li>
+    <li><a class="nav-item" href="#experience" (click)="closeMenu()">Experience</a></li>
+    <li><a class="nav-item" href="#contact" (click)="closeMenu()">Contact</a></li>
   </ul>
 </nav>
