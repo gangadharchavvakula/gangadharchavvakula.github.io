@@ -11,10 +11,10 @@ export class HeaderComponent {
   menuOpen = false;
 
   toggleMenu() {
-    this.menuOpen = !this.menuOpen;
+    this.menuOpen = !this.menuOpen; // Toggle between open/close
   }
 
   closeMenu() {
-    this.menuOpen = false;
+    this.menuOpen = false; // Close menu when clicking a link
   }
 }
