@@ -1,13 +1,13 @@
 <nav class="custom-navbar">
   <a class="logo" routerLink="/">Gangadhar</a>
 
-  <!-- Toggle Button for Mobile -->
-  <button class="toggle-btn" (click)="toggleMenu()">
+  <!-- Toggle Button (Only shown on smaller screens) -->
+  <button class="toggle-btn" (click)="toggleMenu()" *ngIf="isMobile">
     ☰
   </button>
 
-  <!-- Navigation Links (Hidden on Mobile Initially) -->
-  <ul class="nav-links" [class.active]="menuOpen">
+  <!-- Navigation Links -->
+  <ul class="nav-links" [class.active]="menuOpen || !isMobile">
     <li><a class="nav-item" href="#home" (click)="closeMenu()">Home</a></li>
     <li><a class="nav-item" href="#about" (click)="closeMenu()">About</a></li>
     <li><a class="nav-item" href="#skills" (click)="closeMenu()">Skills</a></li>
