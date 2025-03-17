@@ -1,73 +1,129 @@
 /* Contact Section */
 .contact-section {
     text-align: center;
-    padding: 60px 10%;
-    background: #222;
+    padding: 60px 5%;
+    background: linear-gradient(135deg, #1e1e2f, #34344a);
     color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards ease-in-out;
   }
   
+  /* Section Title */
   .section-title {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #ffcc00;
   }
   
-  .subtitle {
+  /* Contact Description */
+  .contact-text {
     font-size: 1.2rem;
-    margin-bottom: 30px;
     color: #ddd;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.8s 0.3s forwards ease-in-out;
   }
   
-  /* Contact Cards */
-  .contact-container {
+  /* Contact Buttons */
+  .contact-buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
   }
   
-  .contact-card {
-    background: #333;
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: scale(0.9);
-    animation: fadeInUp 0.5s forwards;
+  /* Button Styles */
+  .contact-btn {
+    width: 160px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
     text-decoration: none;
     color: white;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s 0.5s forwards ease-in-out;
   }
   
-  .contact-card img {
-    width: 50px;
-    margin-bottom: 10px;
+  /* Hover Effects */
+  .contact-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
   }
   
-  .contact-card h3 {
-    color: #ffcc00;
-    font-size: 1.5rem;
+  /* Button Colors */
+  .whatsapp {
+    background: #25D366;
+    border: 2px solid #1ebc5c;
   }
   
-  .contact-card p {
-    font-size: 1rem;
-    color: #ddd;
+  .linkedin {
+    background: #0077B5;
+    border: 2px solid #005582;
   }
   
-  .contact-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.3);
+  .email {
+    background: #FF4500;
+    border: 2px solid #cc3700;
   }
-  
-  /* Unique Colors */
-  .whatsapp { border-top: 5px solid #25D366; }
-  .linkedin { border-top: 5px solid #0077B5; }
-  .email { border-top: 5px solid #FF4500; }
   
   /* Fade-in Animation */
   @keyframes fadeInUp {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .contact-text {
+      font-size: 1rem;
+    }
+  
+    .contact-btn {
+      width: 140px;
+      height: 45px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-buttons {
+      gap: 15px;
+    }
+  
+    .contact-btn {
+      width: 130px;
+      height: 45px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-section {
+      padding: 40px 5%;
+    }
+  
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .contact-text {
+      font-size: 0.9rem;
+    }
+  
+    .contact-btn {
+      width: 120px;
+      height: 40px;
+      font-size: 0.9rem;
+    }
   }
   

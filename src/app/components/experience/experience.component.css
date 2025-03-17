@@ -1,10 +1,12 @@
+/* Work Experience Section */
 .experience-section {
     text-align: center;
     padding: 60px 10%;
-    background: #222;
+    background: linear-gradient(135deg, #1e1e2f, #34344a);
     color: white;
   }
   
+  /* Section Title */
   .section-title {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -16,6 +18,9 @@
     position: relative;
     max-width: 800px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
   
   .timeline-item {
@@ -25,31 +30,55 @@
     box-sizing: border-box;
     opacity: 0;
     transform: translateX(-50px);
-    animation: slideIn 0.5s forwards;
+    animation: slideIn 0.8s forwards ease-in-out;
   }
   
+  /* Alternate Positions */
   .timeline-item.left {
     text-align: right;
+    align-self: flex-start;
   }
   
   .timeline-item.right {
     text-align: left;
-    margin-left: 50%;
+    align-self: flex-end;
   }
   
-  /* Animation */
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
+  /* Timeline Connector */
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 10px;
+    height: 100%;
+    background: #ffcc00;
+    left: -15px;
+    transform: translateX(-50%);
   }
   
+  .timeline-item.right::before {
+    left: auto;
+    right: -15px;
+    transform: translateX(50%);
+  }
+  
+  /* Content Box */
   .content {
-    background: #333;
+    background: rgba(255, 255, 255, 0.1);
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
+  /* Hover Effect */
+  .content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 204, 0, 0.4);
+  }
+  
+  /* Role and Description */
   .role {
     color: #ffcc00;
     font-weight: bold;
@@ -57,5 +86,57 @@
   
   .description {
     color: #ddd;
+  }
+  
+  /* Slide-In Animation */
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .timeline-item {
+      width: 100%;
+      text-align: left;
+    }
+  
+    .timeline-item::before {
+      left: -10px;
+      right: auto;
+      transform: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .timeline-item {
+      padding: 15px;
+    }
+  
+    .content {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .experience-section {
+      padding: 40px 5%;
+    }
+  
+    .section-title {
+      font-size: 1.8rem;
+    }
+  
+    .content {
+      padding: 12px;
+    }
+  
+    .timeline-item::before {
+      left: -8px;
+    }
   }
   

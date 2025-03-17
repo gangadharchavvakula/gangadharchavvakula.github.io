@@ -10,7 +10,17 @@ import { CommonModule } from '@angular/common';
 })
 export class ExperienceComponent {
   experiences = [
-    { company: "Vee Technologies Pvt Ltd", role: "Software Engineer 1", duration: "06/2022 - 12/2023", description: "Worked on Web 3.0 applications, integrated blockchain technology, and optimized web performance." },
-    { company: "Adyaha Ways Pvt Ltd", role: "Software Engineer", duration: "03/2020 - 06/2022", description: "Developed responsive web applications, API integrations, and UI improvements for enterprise clients." }
+    {
+      company: "Vee Technologies Pvt Ltd",
+      role: "Software Engineer 1",
+      duration: "06/2022 - 12/2023",
+      description: "Led the development of interactive Web3 applications using Angular and Blockchain technologies. Implemented optimized API integrations, reducing load time by 30% and enhancing user experience. Collaborated with cross-functional teams to build scalable enterprise solutions."
+    },
+    {
+      company: "Adyaha Ways Pvt Ltd",
+      role: "Software Engineer",
+      duration: "03/2020 - 06/2022",
+      description: "Designed and developed robust front-end interfaces with Angular and Bootstrap, improving accessibility and responsiveness. Integrated RESTful APIs, ensuring seamless data flow between client and server. Spearheaded performance enhancements, resulting in a 25% increase in page speed."
+    }
   ];
 }
