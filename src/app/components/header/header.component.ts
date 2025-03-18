@@ -1,12 +1,12 @@
 import { Component, HostListener } from '@angular/core';
-import { NgIf } from '@angular/common'; // ✅ Only import NgIf since it's used
+import { CommonModule } from '@angular/common'; // ✅ Import CommonModule for ngClass, ngIf
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NgIf], // ✅ Use only required modules
+  imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   menuOpen = false;
@@ -18,9 +18,9 @@ export class HeaderComponent {
 
   @HostListener('window:resize', [])
   checkScreenSize() {
-    this.isMobile = window.innerWidth <= 768;
+    this.isMobile = window.innerWidth <= 200; // Responsive for less than 200px
     if (!this.isMobile) {
-      this.menuOpen = false; // Ensure menu is closed when switching to desktop
+      this.menuOpen = false;
     }
   }
 
