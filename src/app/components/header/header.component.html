@@ -1,18 +1,16 @@
 <nav class="custom-navbar">
   <a class="logo" routerLink="/">Gangadhar</a>
 
-  <!-- Toggle Button for Mobile Screens -->
-  <button class="toggle-button" *ngIf="isMobile" (click)="toggleMenu()">
-    ☰
-  </button>
+  <!-- Toggle Button for Small Screens -->
+  <button class="menu-toggle" *ngIf="isMobile" (click)="toggleMenu()">☰</button>
 
   <!-- Navigation Links -->
-  <ul class="nav-links" [ngClass]="{'open': menuOpen}" (click)="closeMenu()">
-    <li><a class="nav-item" href="#home">Home</a></li>
-    <li><a class="nav-item" href="#about">About</a></li>
-    <li><a class="nav-item" href="#skills">Skills</a></li>
-    <li><a class="nav-item" href="#projects">Projects</a></li>
-    <li><a class="nav-item" href="#experience">Experience</a></li>
-    <li><a class="nav-item" href="#contact">Contact</a></li>
+  <ul [ngClass]="{ 'nav-links': true, 'open': menuOpen || !isMobile }">
+    <li><a href="#home" (click)="closeMenu()">Home</a></li>
+    <li><a href="#about" (click)="closeMenu()">About</a></li>
+    <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
+    <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
+    <li><a href="#experience" (click)="closeMenu()">Experience</a></li>
+    <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
   </ul>
 </nav>

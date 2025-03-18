@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common'; // ✅ Import CommonModule for ngClass, ngIf
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +18,7 @@ export class HeaderComponent {
 
   @HostListener('window:resize', [])
   checkScreenSize() {
-    this.isMobile = window.innerWidth <= 200; // Responsive for less than 200px
+    this.isMobile = window.innerWidth <= 200; // Responsive for below 200px
     if (!this.isMobile) {
       this.menuOpen = false;
     }
