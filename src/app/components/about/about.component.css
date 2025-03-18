@@ -1,24 +1,36 @@
 .about-section {
-    padding: 60px 10%;
-    background: #222;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
+  padding: 60px 10%;
+  background: #222;
+  color: white;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+strong {
+  color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 5%;
   }
-  
+
   .about-section h2 {
-    font-size: 2.5rem;
-    color: #ffcc00;
-    margin-bottom: 15px;
+    font-size: 2rem;
   }
-  
+
   .about-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #ddd;
+    font-size: 1rem;
   }
-  
-  strong {
-    color: #ffcc00;
-  }
-  
+}

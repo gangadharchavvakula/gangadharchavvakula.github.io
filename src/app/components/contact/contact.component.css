@@ -1,129 +1,23 @@
-/* Contact Section */
 .contact-section {
-    text-align: center;
-    padding: 60px 5%;
-    background: linear-gradient(135deg, #1e1e2f, #34344a);
-    color: white;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s forwards ease-in-out;
+  padding: 60px 10%;
+  background: #34344a;
+  color: white;
+  text-align: center;
+}
+
+.contact-methods a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+.contact-methods a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .contact-methods a {
+    font-size: 1rem;
   }
-  
-  /* Section Title */
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #ffcc00;
-  }
-  
-  /* Contact Description */
-  .contact-text {
-    font-size: 1.2rem;
-    color: #ddd;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeInUp 0.8s 0.3s forwards ease-in-out;
-  }
-  
-  /* Contact Buttons */
-  .contact-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  /* Button Styles */
-  .contact-btn {
-    width: 160px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    border: 2px solid transparent;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s 0.5s forwards ease-in-out;
-  }
-  
-  /* Hover Effects */
-  .contact-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
-  }
-  
-  /* Button Colors */
-  .whatsapp {
-    background: #25D366;
-    border: 2px solid #1ebc5c;
-  }
-  
-  .linkedin {
-    background: #0077B5;
-    border: 2px solid #005582;
-  }
-  
-  .email {
-    background: #FF4500;
-    border: 2px solid #cc3700;
-  }
-  
-  /* Fade-in Animation */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .contact-text {
-      font-size: 1rem;
-    }
-  
-    .contact-btn {
-      width: 140px;
-      height: 45px;
-      font-size: 1rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .contact-buttons {
-      gap: 15px;
-    }
-  
-    .contact-btn {
-      width: 130px;
-      height: 45px;
-      font-size: 0.9rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .contact-section {
-      padding: 40px 5%;
-    }
-  
-    .section-title {
-      font-size: 2rem;
-    }
-  
-    .contact-text {
-      font-size: 0.9rem;
-    }
-  
-    .contact-btn {
-      width: 120px;
-      height: 40px;
-      font-size: 0.9rem;
-    }
-  }
-  
+}
