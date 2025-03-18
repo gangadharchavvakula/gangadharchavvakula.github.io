@@ -11,27 +11,12 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   menuOpen = false;
-  isMobile = false;
-
-  ngOnInit() {
-    this.checkScreenSize();
-  }
-
-  @HostListener('window:resize', [])
-  checkScreenSize() {
-    this.isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
-    if (!this.isMobile) {
-      this.menuOpen = false;
-    }
-  }
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
 
   closeMenu() {
-    if (this.isMobile) {
-      this.menuOpen = false;
-    }
+    this.menuOpen = false;
   }
 }

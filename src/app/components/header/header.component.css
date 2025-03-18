@@ -1,35 +1,37 @@
-/* Navbar Styling */
-.custom-navbar {
+/* Header Base Styling */
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  transition: background 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
 }
 
 /* Logo Styling */
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #333;
   text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Toggle Button Styling */
 .menu-toggle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #333;
   background: none;
   border: none;
   cursor: pointer;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
 /* Navigation Links Styling */
@@ -41,7 +43,7 @@
   padding: 0;
 }
 
-.nav-item {
+.nav-links a {
   text-decoration: none;
   color: #333;
   font-size: 1rem;
@@ -50,47 +52,49 @@
   transition: color 0.3s ease;
 }
 
-.nav-item:hover {
+.nav-links a:hover {
   color: #007bff;
-}
-
-/* Underline Animation */
-.nav-item::after {
-  content: '';
-  width: 0;
-  height: 2px;
-  background: #007bff;
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  transition: width 0.3s ease;
-}
-
-.nav-item:hover::after {
-  width: 100%;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block; /* Show toggle button on small screens */
+    display: block;
   }
 
   .nav-links {
-    display: none; /* Hide navigation links by default on small screens */
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 10px 0;
+    padding: 15px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
   }
 
   .nav-links.open {
-    display: flex; /* Show navigation links when menu is open */
+    display: flex; /* Show when menu is open */
+  }
+}
+
+@media (max-width: 200px) {
+  .navbar {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.4rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
   }
 }
