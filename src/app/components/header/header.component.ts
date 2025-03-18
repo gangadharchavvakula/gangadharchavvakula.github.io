@@ -1,10 +1,11 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
@@ -18,7 +19,7 @@ export class HeaderComponent {
 
   @HostListener('window:resize', [])
   checkScreenSize() {
-    this.isMobile = window.innerWidth <= 200; // Responsive for below 200px
+    this.isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
     if (!this.isMobile) {
       this.menuOpen = false;
     }
@@ -29,6 +30,8 @@ export class HeaderComponent {
   }
 
   closeMenu() {
-    this.menuOpen = false;
+    if (this.isMobile) {
+      this.menuOpen = false;
+    }
   }
 }
