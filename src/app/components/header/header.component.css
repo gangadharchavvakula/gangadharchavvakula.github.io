@@ -12,14 +12,15 @@
   left: 0;
   z-index: 100;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: padding 0.3s ease;
 }
 
 /* Logo Styling */
 .logo {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  font-family: Arial, sans-serif;
-  color: #fff;
+  color: #ffcc00;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Toggle Button for Mobile */
@@ -28,7 +29,7 @@
   background: none;
   border: none;
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -49,10 +50,24 @@ ul li a {
 }
 
 ul li a:hover {
-  color: #ff9900;
+  color: #ffcc00;
 }
 
-/* Responsive Styles */
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  ul {
+    gap: 15px;
+  }
+
+  ul li a {
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -64,16 +79,36 @@ ul li a:hover {
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.9);
     flex-direction: column;
     align-items: center;
-    padding: 10px 0;
-    gap: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 15px;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s;
   }
 
   ul.active {
     display: flex;
+  }
+
+  ul li a {
+    font-size: 1rem;
+    color: #fff;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  ul li a {
+    font-size: 0.9rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.6rem;
   }
 }
 
@@ -88,9 +123,5 @@ ul li a:hover {
 
   ul li a {
     font-size: 0.8rem;
-  }
-
-  .menu-toggle {
-    font-size: 1.4rem;
   }
 }
