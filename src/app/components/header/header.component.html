@@ -1,17 +1,16 @@
 <nav class="navbar">
-  <!-- Logo as your name -->
-  <a class="logo" routerLink="/">Gangadhar</a>
+  <!-- Logo styled as your name -->
+  <div class="logo">Gangadhar</div>
 
-  <!-- Toggle Button for Small Screens -->
+  <!-- Toggle Button for small screens -->
   <button class="menu-toggle" (click)="toggleMenu()">☰</button>
 
   <!-- Navigation Links -->
-  <ul [ngClass]="{ 'nav-links': true, 'open': menuOpen }">
-    <li><a routerLink="/home" (click)="closeMenu()">Home</a></li>
-    <li><a routerLink="/about" (click)="closeMenu()">About</a></li>
-    <li><a routerLink="/skills" (click)="closeMenu()">Skills</a></li>
-    <li><a routerLink="/projects" (click)="closeMenu()">Projects</a></li>
-    <li><a routerLink="/experience" (click)="closeMenu()">Experience</a></li>
-    <li><a routerLink="/contact" (click)="closeMenu()">Contact</a></li>
+  <ul [class.active]="menuOpen">
+    <li><a href="#home" (click)="closeMenu()">Home</a></li>
+    <li><a href="#about" (click)="closeMenu()">About</a></li>
+    <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
+    <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
+    <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
   </ul>
 </nav>
