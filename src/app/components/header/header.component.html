@@ -1,16 +1,22 @@
-<nav class="navbar">
-  <!-- Logo styled as your name -->
-  <div class="logo">Gangadhar</div>
+<header class="header">
+  <div class="header-content">
+    <!-- Profile Image -->
+    <div class="profile-container">
+      <img src="assets/my_dp.jpg" alt="Gangadhar" class="profile-image">
+      <div class="glow-ring"></div>
+    </div>
 
-  <!-- Toggle Button for small screens -->
-  <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+    <!-- Name and Tagline -->
+    <div class="name-container">
+      <h1 class="name">Gangadhar</h1>
+      <p class="tagline">Creative Developer & Angular Expert</p>
+    </div>
 
-  <!-- Navigation Links -->
-  <ul [class.active]="menuOpen">
-    <li><a href="#home" (click)="closeMenu()">Home</a></li>
-    <li><a href="#about" (click)="closeMenu()">About</a></li>
-    <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
-    <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
-    <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
-  </ul>
-</nav>
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </div>
+</header>

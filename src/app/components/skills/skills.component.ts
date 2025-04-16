@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // ✅ Import CommonModule
 
+interface Skill {
+  name: string;
+  icon: string;
+}
+
 @Component({
   selector: 'app-skills',
   standalone: true,
@@ -11,12 +16,14 @@ import { CommonModule } from '@angular/common'; // ✅ Import CommonModule
 export class SkillsComponent {
   selectedTab = 0; // Default first tab selected
 
-  skills = [
-    { name: "Angular", description: "Experienced in building scalable Angular applications with best practices, lazy loading, and state management." },
-    { name: "React.js", description: "Skilled in developing modern React applications using hooks, Redux, and component-based architecture." },
-    { name: "TypeScript", description: "Expertise in TypeScript to write strongly typed, maintainable, and scalable code." },
-    { name: "Bootstrap & CSS3", description: "Capable of designing responsive, mobile-friendly UI using Bootstrap, Flexbox, and CSS animations." },
-    { name: "Web3 & Blockchain", description: "Exploring Web3 technologies, smart contracts, and blockchain integration using Solidity & Web3.js." }
+  skills: Skill[] = [
+    { name: 'HTML5', icon: 'assets/icons/html5.svg' },
+    { name: 'CSS3', icon: 'assets/icons/css3.svg' },
+    { name: 'JavaScript', icon: 'assets/icons/javascript.svg' },
+    { name: 'Angular', icon: 'assets/icons/angular.svg' },
+    { name: 'React.js', icon: 'assets/icons/react.svg' },
+    { name: 'React Native', icon: 'assets/icons/react-native.svg' },
+    { name: 'TypeScript', icon: 'assets/icons/typescript.svg' }
   ];
 
   selectTab(index: number) {

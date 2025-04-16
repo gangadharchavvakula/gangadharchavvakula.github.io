@@ -1,0 +1,154 @@
+/* === Gallery === */
+.gallery-container {
+    padding: 40px 20px;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+  }
+  
+  .gallery-grid img,
+  .text-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    /* border-radius: 8px; */
+    border: #000 solid;
+  }
+  
+  .text-box {
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 8px; */
+  }
+  
+  /* === Portfolio Link === */
+  .portfolio-link {
+    text-align: center;
+    margin: 80px 0 80px 0; /* Top & Bottom spacing */
+  }
+  
+  .portfolio-link a {
+    font-size: 1.6rem;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+    transition: 0.3s ease;
+  }
+  
+  .portfolio-link a:hover {
+    color: #d81b60;
+    border-color: #d81b60;
+  }
+  
+  /* === Curved Wedding Video Section === */
+  .curved-video-wrapper {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+  }
+  
+  .curved-video-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  
+    /* Curved top and bottom using clip-path */
+    clip-path: path('M0,80 C300,0 1140,0 1440,80 L1440,500 C1140,580 300,580 0,500 Z');
+  }
+  
+  .wedding-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+  
+  /* Overlay text on video */
+  .video-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    z-index: 2;
+    max-width: 600px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+  }
+  
+  .video-text-overlay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .video-text-overlay p {
+    font-size: 1.2rem;
+  }
+  
+  /* === Responsive Design === */
+  @media screen and (max-width: 1024px) {
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .video-text-overlay h2 {
+      font-size: 2rem;
+    }
+  
+    .video-text-overlay p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .curved-video-wrapper {
+      height: 60vh;
+    }
+  
+    .video-text-overlay {
+      left: 5%;
+      max-width: 90%;
+    }
+  
+    .video-text-overlay h2 {
+      font-size: 1.6rem;
+    }
+  
+    .video-text-overlay p {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .curved-video-wrapper {
+      height: 50vh;
+    }
+  
+    .video-text-overlay h2 {
+      font-size: 1.4rem;
+    }
+  
+    .video-text-overlay p {
+      font-size: 0.9rem;
+    }
+  }
+  

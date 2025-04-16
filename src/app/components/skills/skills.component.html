@@ -1,21 +1,12 @@
-<section id="skills" class="skills-section">
-    <h2 class="section-title">My Skills</h2>
-    
-    <!-- Tab Navigation -->
-    <div class="tabs">
-      <button *ngFor="let skill of skills; let i = index" 
-              (click)="selectTab(i)" 
-              [class.active]="selectedTab === i">
-        {{ skill.name }}
-      </button>
-    </div>
-  
-    <!-- Tab Content -->
-    <div class="tab-content">
-      <div class="tab-pane" *ngFor="let skill of skills; let i = index" [class.active]="selectedTab === i">
-        <h3>{{ skill.name }}</h3>
-        <p>{{ skill.description }}</p>
+<section class="skills-section">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card" *ngFor="let skill of skills">
+      <div class="skill-icon">
+        <img [src]="skill.icon" [alt]="skill.name">
       </div>
+      <h3 class="skill-name">{{skill.name}}</h3>
     </div>
-  </section>
+  </div>
+</section>
   

@@ -1,13 +1,15 @@
-<app-header></app-header>
-
-
-<app-home></app-home>
-<!-- About Section -->
-<app-about></app-about>
-
-<!-- Skills Section -->
-<app-skills></app-skills>
-<app-projects></app-projects>
-<app-experience></app-experience>
-<app-contact></app-contact>
-<app-footer></app-footer>
+<app-background></app-background>
+<div class="content-wrapper">
+  <app-header></app-header>
+  <main>
+    <app-home></app-home>
+    <app-about></app-about>
+    <app-experience></app-experience>
+    <app-skills></app-skills>
+    <app-projects></app-projects>
+    <app-contact></app-contact>
+  </main>
+  <app-footer></app-footer>
+</div>
+<app-theme-toggle></app-theme-toggle>
+<router-outlet></router-outlet>

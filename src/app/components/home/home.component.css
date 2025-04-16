@@ -1,12 +1,183 @@
-.home-section {
+/* Import required fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+/* Solar System Background */
+.solar-system {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #000000;
+  overflow: hidden;
+}
+
+/* VS Code Intro */
+.intro-container {
+  position: relative;
+  height: 90vh;
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #1e1e2f, #34344a);
-  color: white;
-  text-align: center;
-  padding: 20px;
+  justify-content: center;
+  z-index: 1;
+}
+
+.vscode-window {
+  width: 80%;
+  max-width: 960px;
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #00cfff;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #2d2d2d;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.control-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.control-dot.red { background: #ff5f56; }
+.control-dot.yellow { background: #ffbd2e; }
+.control-dot.green { background: #27c93f; }
+
+.window-title {
+  color: #888;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+
+.code-container {
+  display: flex;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.line-numbers {
+  color: #858585;
+  padding: 1rem 0.5rem;
+  text-align: right;
+  user-select: none;
+  min-width: 3rem;
+  background: #252525;
+}
+
+.line-numbers span {
+  display: block;
+  padding: 0 0.5rem;
+}
+
+.code-content {
+  flex: 1;
+  padding: 1rem;
+  background: #1e1e1e;
+  position: relative;
+}
+
+.code-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.comment { color: #6a9955; }
+.keyword { color: #569cd6; }
+.variable { color: #9cdcfe; }
+.operator { color: #d4d4d4; }
+.property { color: #9cdcfe; }
+.string { color: #ce9178; }
+
+.profile-image {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-image.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@media (max-width: 768px) {
+  .vscode-window {
+    width: 95%;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vscode-window {
+    width: 100%;
+  }
+
+  .code-container {
+    font-size: 0.9rem;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .home-content h1 {
