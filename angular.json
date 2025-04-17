@@ -46,8 +46,8 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/gangadharchavvakula/",
-              "deployUrl": "/gangadharchavvakula/"
+              "baseHref": "/",
+              "deployUrl": "/"
             },
             "development": {
               "buildOptimizer": false,
