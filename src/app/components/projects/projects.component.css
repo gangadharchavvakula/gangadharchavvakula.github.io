@@ -2,9 +2,10 @@
 
 .projects-section {
   padding: 4rem 2rem;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
   position: relative;
-  overflow: hidden;
+  background: transparent;
+  overflow: visible;
+  min-height: 100vh;
 }
 
 .projects-section::before {
@@ -22,6 +23,11 @@
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .section-title {
@@ -41,97 +47,142 @@
   z-index: 1;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
 .project-card {
-  background: rgba(30, 30, 30, 0.8);
-  border-radius: 12px;
-  padding: 1.5rem;
-  cursor: pointer;
+  background: rgba(15, 15, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s ease;
   position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-  min-height: 300px;
-  perspective: 1000px;
+  overflow: hidden;
 }
 
-.card-front,
-.card-back {
+.project-card::before {
+  content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  padding: 1.5rem;
-  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(45deg, transparent, rgba(0, 207, 255, 0.2), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
-.card-back {
-  transform: rotateY(180deg);
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 207, 255, 0.2);
+}
+
+.project-card:hover::before {
+  background: linear-gradient(45deg, transparent, rgba(0, 207, 255, 0.4), transparent);
 }
 
 .project-title {
-  color: #00b4d8;
+  color: #00cfff;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-.project-timeline {
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
   color: #a0a0a0;
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
 }
 
 .project-company {
-  color: #fff;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .project-description {
-  color: #e0e0e0;
+  color: #ffffff;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin: 0;
+  opacity: 0.9;
 }
 
-.project-highlights {
+.project-description .highlight {
+  color: #ffdf00;
+  font-weight: 500;
+}
+
+.project-responsibilities {
+  margin-top: 1.5rem;
+}
+
+.responsibilities-title {
+  color: #00cfff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.responsibilities-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.project-highlights li {
-  color: #e0e0e0;
+.responsibilities-list li {
+  color: #ffffff;
   margin-bottom: 0.8rem;
   padding-left: 1.5rem;
   position: relative;
+  opacity: 0.9;
+  line-height: 1.5;
 }
 
-.project-highlights li::before {
+.responsibilities-list li::before {
   content: '→';
   position: absolute;
   left: 0;
-  color: #00b4d8;
+  color: #ffdf00;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card.visible {
+  animation: slideIn 0.6s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
   .projects-section {
-    padding: 3rem 1rem;
+    padding: 3rem 1.5rem;
   }
   
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .projects-grid {
+  .projects-container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    padding: 1.5rem;
   }
 }
 

@@ -1,22 +1,22 @@
-<header class="header">
+<header class="header" [class.visible]="headerVisible">
   <div class="header-content">
+
     <!-- Profile Image -->
     <div class="profile-container">
-      <img src="assets/my_dp.jpg" alt="Gangadhar" class="profile-image">
+      <img src="assets/my_dp.jpg" alt="Gangadhar" class="profile-image" />
       <div class="glow-ring"></div>
     </div>
 
-    <!-- Name and Tagline -->
+    <!-- Name & Tagline -->
     <div class="name-container">
       <h1 class="name">Gangadhar</h1>
       <p class="tagline">Creative Developer & Angular Expert</p>
     </div>
 
-    <!-- Navigation Links -->
-    <nav class="nav-links">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
+    <!-- Hamburger Toggle for Mobile -->
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="menuOpen" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+
   </div>
 </header>

@@ -1,4 +1,4 @@
-import { Component, HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,45 +7,31 @@ import { Component, HostListener, ElementRef, Renderer2 } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  private lastScrollTop = 0;
-  private headerElement: HTMLElement | null = null;
-
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
-
-  ngAfterViewInit(): void {
-    this.headerElement = this.el.nativeElement.querySelector('.header');
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll() {
-    if (!this.headerElement) return;
-
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Show header when scrolling down
-    if (scrollTop > 100) {
-      this.renderer.addClass(this.headerElement, 'visible');
-      this.renderer.addClass(this.headerElement, 'scrolled');
-    } else {
-      this.renderer.removeClass(this.headerElement, 'visible');
-      this.renderer.removeClass(this.headerElement, 'scrolled');
-    }
-
-    // Hide header when scrolling up
-    if (scrollTop < this.lastScrollTop) {
-      this.renderer.addClass(this.headerElement, 'visible');
-    }
-
-    this.lastScrollTop = scrollTop;
-  }
-
   menuOpen = false;
+  headerVisible = true;
 
-  toggleMenu() {
+  private lastScrollTop = 0;
+
+  toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
 
-  closeMenu() {
+  closeMenu(): void {
     this.menuOpen = false;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > this.lastScrollTop && currentScroll > 100) {
+      // scrolling down
+      this.headerVisible = false;
+    } else {
+      // scrolling up
+      this.headerVisible = true;
+    }
+
+    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
 }

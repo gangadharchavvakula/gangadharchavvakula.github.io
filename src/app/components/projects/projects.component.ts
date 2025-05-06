@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { trigger, state, style, animate, transition, stagger, query } from '@angular/animations';
+import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
 
 interface Project {
   title: string;
-  timeline: string;
+  duration: string;
   company: string;
   description: string;
-  highlights: string[];
 }
 
 @Component({
@@ -18,76 +17,46 @@ interface Project {
   styleUrls: ['./projects.component.css'],
   animations: [
     trigger('cardAnimation', [
-      transition('* => *', [
-        query(':enter', [
+      transition(':enter', [
+        query('.project-card', [
           style({ opacity: 0, transform: 'translateY(50px)' }),
-          stagger(100, [
-            animate('0.5s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+          stagger(200, [
+            animate('0.5s ease', style({ opacity: 1, transform: 'translateY(0)' }))
           ])
-        ], { optional: true })
+        ])
       ])
-    ]),
-    trigger('flipCard', [
-      state('front', style({
-        transform: 'rotateY(0deg)'
-      })),
-      state('back', style({
-        transform: 'rotateY(180deg)'
-      })),
-      transition('front => back', animate('0.5s ease-out')),
-      transition('back => front', animate('0.5s ease-out'))
     ])
   ]
 })
 export class ProjectsComponent implements OnInit {
+  showCards = false;
+
   projects: Project[] = [
     {
       title: 'ATS (Applicant Tracking System)',
-      timeline: '06/2023 – 12/2023',
+      duration: 'June 2023 – December 2023',
       company: 'Vee Technologies Pvt Ltd',
-      description: 'HRMS-like system supporting 5 user roles with features like interview scheduling, employee management, and payroll.',
-      highlights: [
-        'Built responsive UI with Angular, Bootstrap',
-        'Integrated REST APIs with HttpClient',
-        'Role-based routing (AuthGuard)',
-        'Used Reactive Forms for dynamic inputs'
-      ]
+      description: 'A comprehensive <span class="highlight">HRMS</span> platform designed to streamline the entire employee lifecycle. Built for HR teams and managers, it handles everything from hiring and onboarding to performance reviews and payroll. The system makes it easy to schedule interviews, manage employee data, and process payments, all in one place.'
     },
     {
-      title: 'Ecommerce Platform',
-      timeline: '06/2022 – 05/2023',
+      title: 'E-commerce Platform',
+      duration: 'June 2022 – May 2023',
       company: 'Vee Technologies Pvt Ltd',
-      description: 'Shopping platform with user registration, product listing, cart, messaging, and orders.',
-      highlights: [
-        'Implemented JWT Auth & user sessions',
-        'Built cart & messaging modules',
-        'Used Angular Pipes & Directives',
-        'Performed CRUD with Node.js & MongoDB'
-      ]
+      description: 'A full-featured <span class="highlight">e-commerce platform</span> that connects buyers and sellers. Users can create accounts, list products, browse items, and make purchases. The platform includes a shopping cart, secure checkout, and a messaging system for direct communication between buyers and sellers.'
     },
     {
       title: 'Billing Central',
-      timeline: '06/2020 – 05/2022',
+      duration: 'June 2020 – May 2022',
       company: 'Adyaha Ways Pvt Ltd',
-      description: 'Web app for 24/7 access to billing info, claims, invoices, and communication between clients & patients.',
-      highlights: [
-        'Developed UI in Angular',
-        'Built message center with real-time updates',
-        'Secured access with JWT & guards',
-        'Used RxJS Observables for async handling'
-      ]
+      description: 'A secure web application that provides 24/7 access to medical billing information. Designed for healthcare providers and patients, it allows users to view billing details, track claims, and communicate securely. The system helps streamline the billing process and improve transparency in healthcare payments.'
     }
   ];
 
-  cardStates: { [key: string]: 'front' | 'back' } = {};
+  constructor() { }
 
-  ngOnInit() {
-    this.projects.forEach(project => {
-      this.cardStates[project.title] = 'front';
-    });
-  }
-
-  toggleCard(project: Project) {
-    this.cardStates[project.title] = this.cardStates[project.title] === 'front' ? 'back' : 'front';
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.showCards = true;
+    }, 100);
   }
 }

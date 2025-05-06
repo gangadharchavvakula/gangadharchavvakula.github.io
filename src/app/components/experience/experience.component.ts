@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
 
 interface Experience {
+  title: string;
   company: string;
-  role: string;
   period: string;
-  location?: string;
-  type: string;
-  responsibilities: string[];
-  logo?: string;
+  points: string[];
+  isCurrent?: boolean;
 }
 
 @Component({
@@ -16,54 +15,68 @@ interface Experience {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.css'
+  styleUrls: ['./experience.component.css'],
+  animations: [
+    trigger('timelineAnimation', [
+      transition(':enter', [
+        query('.experience-card', [
+          style({ opacity: 0, transform: 'translateY(20px)' }),
+          stagger(100, [
+            animate('0.6s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+          ])
+        ])
+      ])
+    ])
+  ]
 })
-export class ExperienceComponent {
+export class ExperienceComponent implements OnInit {
   experiences: Experience[] = [
     {
-      company: 'Self-Learning & Freelance Development',
-      role: 'FrontEnd Developer',
+      title: 'Self-Learning & Freelance Development',
+      company: 'Freelancer',
       period: '01/2024 - Present',
-      type: 'Freelancer',
-      responsibilities: [
-        'Explored & Upgraded Skills: Learned React.js, React Native, and the latest Angular 19 features (Standalone Components, Signals, State Management)',
-        'Developed and deployed Web 3.0-based applications, integrating blockchain technology for decentralized functionality',
-        'Worked with clients globally, gathering business requirements and delivering high-quality web solutions',
-        'Explored backend technologies (Node.js, MongoDB) and API integrations for seamless data flow',
-        'Optimized performance of web applications with lazy loading, caching, and efficient state management',
-        'Integrated Smart Contracts & DApps using Ethereum, Solidity, and Web3.js'
-      ]
+      points: [
+        'Explored and upgraded skills in React.js, React Native, and Angular 19 features.',
+        'Developed Web 3.0 apps using blockchain integration (Ethereum, Solidity, Web3.js).',
+        'Worked with global clients, delivering custom web solutions and API integrations.'
+      ],
+      isCurrent: true
     },
     {
+      title: 'Software Engineer 1',
       company: 'Vee Technologies Pvt Ltd',
-      role: 'Software Engineer 1',
       period: '06/2022 - 12/2023',
-      location: 'Salem, Tamilnadu',
-      type: 'Full-time',
-      responsibilities: [
-        'Developed & Maintained Web Applications: Built and optimized E-commerce and ATS projects using Angular, TypeScript, HTML5, and CSS3',
-        'Implemented Routing & Route Guards: Configured Angular Routing with lazy loading, Route Guards for navigation and user access',
-        'Reactive Forms & Validations: Created dynamic Reactive Forms with custom validations and error messages',
-        'API Integration & CRUD Operations: Used Angular Services and HTTPClient for RESTful API operations',
-        'State Management & Optimization: Utilized RxJS for asynchronous data flow and performance improvement',
-        'Responsive UI & Cross-Browser Support: Designed responsive, mobile-friendly UI using Bootstrap',
-        'Version Control & Team Collaboration: Worked in Agile environment with Git/GitHub'
+      points: [
+        'Developed and maintained e-commerce and ATS systems using Angular, TypeScript.',
+        'Optimized performance with RxJS and state management techniques.',
+        'Integrated RESTful APIs and built dynamic forms with Angular Reactive Forms.'
       ]
     },
     {
+      title: 'Software Engineer',
       company: 'Adyaha Ways Pvt Ltd',
-      role: 'Software Engineer',
       period: '03/2020 - 06/2022',
-      location: 'Hyderabad',
-      type: 'Full-time',
-      responsibilities: [
-        'Developed & Maintained UI: Built responsive and interactive web applications using Angular, TypeScript, HTML5, and CSS3',
-        'API Integration: Integrated RESTful APIs using HTTPClient Module for data communication',
-        'Responsive & Cross-Browser Design: Ensured mobile-friendly UI using Bootstrap, Flexbox, and Media Queries',
-        'Debugging & Performance Optimization: Identified and fixed UI/UX issues using Chrome DevTools',
-        'Version Control & Collaboration: Used Git & GitHub for source code management and code reviews',
-        'Continuous Learning & Testing: Enhanced coding skills and wrote unit tests using Jasmine & Karma'
+      points: [
+        'Built responsive UI and integrated APIs using Angular, TypeScript, and HTML5.',
+        'Enhanced performance through debugging and cross-browser optimization.',
+        'Collaborated with teams in an Agile environment using Git/GitHub.'
       ]
     }
   ];
+
+  showTimeline = false;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.showTimeline = true;
+    }, 100);
+  }
+
+  getExperienceNumber(index: number): number {
+    return this.experiences.length - index;
+  }
+
+  isLastExperience(index: number): boolean {
+    return index === 0;
+  }
 }

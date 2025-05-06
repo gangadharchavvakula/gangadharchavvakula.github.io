@@ -1,12 +1,34 @@
 <section class="skills-section">
-  <h2 class="section-title">Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card" *ngFor="let skill of skills">
-      <div class="skill-icon">
-        <img [src]="skill.icon" [alt]="skill.name">
+  <div class="skills-container">
+    <h2 class="section-title">Skills</h2>
+    
+    <!-- Category Toggle Buttons -->
+    <div class="category-toggles">
+      <button 
+        class="toggle-btn" 
+        [class.active]="activeCategory === 'Frontend Technologies'"
+        (click)="setActiveCategory('Frontend Technologies')">
+        Frontend
+      </button>
+      <button 
+        class="toggle-btn" 
+        [class.active]="activeCategory === 'Tools'"
+        (click)="setActiveCategory('Tools')">
+        Tools
+      </button>
+    </div>
+
+    <!-- Skills Grid -->
+    <div *ngIf="showCards" class="skills-content">
+      <div class="skills-grid" [@cardAnimation]>
+        <div *ngFor="let skill of getActiveSkills()" 
+             class="skill-card">
+          <div class="skill-icon" [style.color]="skill.color">
+            <i [class]="skill.icon"></i>
+          </div>
+          <h3 class="skill-name">{{ skill.name }}</h3>
+        </div>
       </div>
-      <h3 class="skill-name">{{skill.name}}</h3>
     </div>
   </div>
 </section>
-  

@@ -1,9 +1,3 @@
-<!-- Solar System Background -->
-<div class="solar-system">
-  <canvas #solarSystemCanvas></canvas>
-</div>
-
-<!-- VS Code Intro -->
 <section class="home-section">
   <div class="vscode-window">
     <div class="window-controls">
@@ -12,59 +6,27 @@
       <div class="control-dot green"></div>
       <div class="window-title">quantum_gangadhar.ts</div>
     </div>
+
     <div class="code-container">
       <div class="line-numbers">
-        <span *ngFor="let line of codeLines; let i = index">{{i + 1}}</span>
+        <span *ngFor="let _ of displayedContent; let i = index">{{ i + 1 }}</span>
       </div>
+
       <div class="code-content">
-        <div class="code-line" *ngFor="let line of codeLines; let i = index" [@typingAnimation]="i">
-          <span class="comment" *ngIf="i === 0">/**</span>
-          <span class="comment" *ngIf="i === 1"> * Digital Solutions Engineer</span>
-          <span class="comment" *ngIf="i === 2"> * Building for web, mobile, and beyond</span>
-          <span class="comment" *ngIf="i === 3"> */</span>
-          <span class="keyword" *ngIf="i === 4">const</span>
-          <span class="variable" *ngIf="i === 4"> gangadhar</span>
-          <span class="operator" *ngIf="i === 4"> =</span>
-          <span class="operator" *ngIf="i === 4">{{ '{' }}</span>
-          <span class="property" *ngIf="i === 5">  role</span>
-          <span class="operator" *ngIf="i === 5">:</span>
-          <span class="string" *ngIf="i === 5"> "Full Stack Developer"</span>
-          <span class="operator" *ngIf="i === 5">,</span>
-          <span class="property" *ngIf="i === 6">  expertise</span>
-          <span class="operator" *ngIf="i === 6">:</span>
-          <span class="operator" *ngIf="i === 6">{{ '[' }}</span>
-          <span class="string" *ngIf="i === 7">    "Angular & Web Apps 🌐"</span>
-          <span class="operator" *ngIf="i === 7">,</span>
-          <span class="string" *ngIf="i === 8">    "Mobile Development 📱"</span>
-          <span class="operator" *ngIf="i === 8">,</span>
-          <span class="string" *ngIf="i === 9">    "Creative UI Design 🎨"</span>
-          <span class="operator" *ngIf="i === 9">,</span>
-          <span class="operator" *ngIf="i === 10">  ]</span>
-          <span class="operator" *ngIf="i === 10">,</span>
-          <span class="property" *ngIf="i === 11">  approach</span>
-          <span class="operator" *ngIf="i === 11">:</span>
-          <span class="operator" *ngIf="i === 11">{{ '{' }}</span>
-          <span class="property" *ngIf="i === 12">    focus</span>
-          <span class="operator" *ngIf="i === 12">:</span>
-          <span class="string" *ngIf="i === 12"> "User First"</span>
-          <span class="operator" *ngIf="i === 12">,</span>
-          <span class="property" *ngIf="i === 13">    quality</span>
-          <span class="operator" *ngIf="i === 13">:</span>
-          <span class="string" *ngIf="i === 13"> "Pixel Perfect"</span>
-          <span class="operator" *ngIf="i === 13">,</span>
-          <span class="operator" *ngIf="i === 14">  &#125;</span>
-          <span class="operator" *ngIf="i === 14">,</span>
-          <span class="property" *ngIf="i === 15">  mission</span>
-          <span class="operator" *ngIf="i === 15">:</span>
-          <span class="string" *ngIf="i === 15"> "Simplify. Solve. Scale."</span>
-          <span class="operator" *ngIf="i === 15">,</span>
-          <span class="operator" *ngIf="i === 16">&#125;</span>
-          <span class="operator" *ngIf="i === 16">;</span>
+        <div
+          class="code-line"
+          *ngFor="let line of displayedContent; let i = index"
+        >
+          <span [innerHTML]="line"></span>
+          <span *ngIf="i === currentLine && isTyping" class="cursor">|</span>
         </div>
       </div>
     </div>
   </div>
-  <div class="profile-image" [@fadeIn]="showProfile">
-    <img src="assets/images/profile.jpg" alt="Gangadhar">
-  </div>
 </section>
+
+<!-- Divider Line Between Home and About -->
+<div class="section-divider"></div>
+
+<!-- About Section Placeholder -->
+<!-- <app-about></app-about> -->

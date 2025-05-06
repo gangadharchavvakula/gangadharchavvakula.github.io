@@ -1,0 +1,135 @@
+// @import 'src/styles/variables';
+
+// .footer {
+//   position: relative;
+//   padding: 2rem 0;
+//   background-color: rgba(15, 15, 20, 0.6);
+//   backdrop-filter: blur(10px);
+//   border-top: 1px solid rgba(255, 255, 255, 0.1);
+//   opacity: 0;
+//   transform: translateY(20px);
+//   animation: fadeInUpFooter 0.8s ease forwards;
+//   z-index: 10;
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     height: 1px;
+//     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+//   }
+// }
+
+// .footer-content {
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   padding: 0 1.5rem;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   gap: 1.5rem;
+// }
+
+// .social-icons {
+//   display: flex;
+//   gap: 2rem;
+//   margin-bottom: 1rem;
+
+//   .social-icon {
+//     color: #ffffff;
+//     font-size: 1.5rem;
+//     transition: all 0.3s ease;
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 45px;
+//     height: 45px;
+//     border-radius: 50%;
+//     background: rgba(255, 255, 255, 0.1);
+//     backdrop-filter: blur(5px);
+
+//     &:hover {
+//       transform: scale(1.1);
+//       color: #00cfff;
+//       box-shadow: 0 0 15px rgba(0, 207, 255, 0.4);
+//       background: rgba(0, 207, 255, 0.1);
+//     }
+
+//     i {
+//       transition: transform 0.3s ease;
+//     }
+
+//     &:hover i {
+//       transform: scale(1.1);
+//     }
+//   }
+// }
+
+// .copyright {
+//   color: #ccc;
+//   font-family: 'Poppins', sans-serif;
+//   font-size: 1rem;
+//   text-align: center;
+//   opacity: 0.8;
+//   transition: opacity 0.3s ease;
+//   padding-top: 1rem;
+
+//   &:hover {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes fadeInUpFooter {
+//   from {
+//     opacity: 0;
+//     transform: translateY(20px);
+//   }
+//   to {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// // Responsive Design
+// @media (max-width: 768px) {
+//   .footer {
+//     padding: 1.5rem 0;
+//   }
+
+//   .social-icons {
+//     gap: 1.5rem;
+
+//     .social-icon {
+//       width: 40px;
+//       height: 40px;
+//       font-size: 1.3rem;
+//     }
+//   }
+
+//   .copyright {
+//     font-size: 0.9rem;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .footer {
+//     padding: 1rem 0;
+//   }
+
+//   .social-icons {
+//     gap: 1.2rem;
+
+//     .social-icon {
+//       width: 35px;
+//       height: 35px;
+//       font-size: 1.1rem;
+//     }
+//   }
+
+//   .copyright {
+//     font-size: 0.8rem;
+//   }
+// } 
