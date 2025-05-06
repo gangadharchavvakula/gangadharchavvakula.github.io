@@ -165,4 +165,8 @@
     font-size: 1.3rem;
     padding: 1.2rem 3rem;
   }
+
+  .contact-row {
+    right: 15px;
+  }
 }
