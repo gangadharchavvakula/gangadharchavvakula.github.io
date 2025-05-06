@@ -170,7 +170,8 @@
   }
 
   .vscode-window {
-    aspect-ratio: 4 / 3;
+    margin-top: 70px;
+    aspect-ratio: 12 / 13;
   }
 
   .section-divider {
@@ -184,10 +185,46 @@
   }
 
   .vscode-window {
-    aspect-ratio: 5 / 4;
+    margin-top: 60px;
+    aspect-ratio: 9 / 16;
   }
 
   .section-divider {
     margin: 1rem 0;
+  }
+}
+
+/* Large screens (desktops & TVs) */
+@media (min-width: 1200px) {
+  .home-section {
+    padding: 4rem;
+  }
+
+  .vscode-window {
+    max-width: 1200px;
+    font-size: 16px;
+  }
+
+  .window-title {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .home-section {
+    padding: 6rem;
+  }
+
+  .vscode-window {
+    max-width: 1400px;
+    font-size: 18px;
+  }
+
+  .window-title {
+    font-size: 18px;
+  }
+
+  .section-divider {
+    margin: 3rem 0;
   }
 }

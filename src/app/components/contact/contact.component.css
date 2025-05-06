@@ -143,6 +143,9 @@
   .section-title {
     font-size: 1.8rem;
   }
+  .contact-row {
+    right: 15px;
+  }
 
   .contact-item {
     font-size: 1rem;
